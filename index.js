@@ -10,6 +10,7 @@ app.use(express.static("public"));
 
 app.get("/", async (req, res) => {
   try {
+    // Gets a random dog image
     const result = await axios.get("https://random.dog/woof.json");
     res.render("index.ejs", { img: result.data.url });
   } catch (error) {
